@@ -3,22 +3,22 @@ import mongoose from "mongoose";
 const blogSchema = new mongoose.Schema({
     heading: {
         type: String,
-        required: true
+        required: [true, "Heading is required!!"]
     },
     field: {
         type: String
     },
     content: {
         type: String,
-        required: true
+        required: [true, "You forgot to add content to your post!!"]
     },
     author: {
         type: String,
-        required: true
+        required: [true, "Your post needs an author!!"]
     },
     date: {
         type: Date,
-        required: true
+        required: [true, "Your post needs a date!!"]
     }
 },
 {
