@@ -7,7 +7,7 @@ export default class BlogSchema {
         try {
             const newBlog = await blogModel.create(input);
             return newBlog;
-        } catch (error) {
+        } catch (error: any) {
             throw error;
         }
     }
@@ -16,7 +16,16 @@ export default class BlogSchema {
         try {
             const blog = await blogModel.findOne(query);
             return blog;
-        } catch (error) {
+        } catch (error: any) {
+            throw error;
+        }
+    }
+
+    static findAll = async () => {
+        try {
+            const allBlogs = await blogModel.find();
+            return allBlogs;
+        } catch (error: any) {
             throw error;
         }
     }
