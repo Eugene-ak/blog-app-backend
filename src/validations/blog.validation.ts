@@ -2,7 +2,6 @@ import Joi from "joi";
 
 export const blogValidation = Joi.object({
     heading: Joi.string()
-        .alphanum()
         .min(3)
         .required(),
     field: Joi.string()

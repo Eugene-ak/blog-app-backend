@@ -39,12 +39,13 @@ export default class BlogSchema {
     }
   };
 
-  static updateOne = async (id: mongoose.ObjectId, input: any) => {
+  static updateOne = async (id: mongoose.Types.ObjectId, input: {}) => {
     try {
       const updatedBlog = await blogModel.updateOne(
         { id },
         { $set: { ...input } },
       );
+      return updatedBlog;
     } catch (error: any) {
       throw error;
     }
