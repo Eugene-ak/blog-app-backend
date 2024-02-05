@@ -50,4 +50,13 @@ export default class BlogSchema {
       throw error;
     }
   };
+
+  static deleteOneById = async (id: mongoose.Types.ObjectId) => {
+    try {
+      const foundBlog = await blogModel.deleteOne(id);
+      return foundBlog;
+    } catch (error) {
+      throw error;
+    }
+  }
 }

@@ -7,7 +7,11 @@ export const findOneBlog = async (req: Request, res: Response) => {
     const id = req.params.id as string;
     const foundBlog = await BlogSchema.findOneById(CastToId(id));
 
-    res.status(200).json(foundBlog);
+    if (!foundBlog) {
+      res.status(400).json({message: "Record not found"});
+    } else {
+      res.status(200).json(foundBlog);
+    }
 
   } catch (error: any) {
     res.status(400).json({ error: error.message });
