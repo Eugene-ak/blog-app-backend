@@ -1,0 +1,38 @@
+@BASE_URL=http://localhost:4000/api/blog/
+
+### Creating a blog ###
+POST {{BASE_URL}}/create
+
+{
+  "heading": "Exploring the Wonders of Wildlife Photography",
+  "field": "Photography",
+  "content": "Wildlife photography is a mesmerizing art form that allows us to capture the beauty and essence of the natural world. From the majestic movements of a soaring eagle to the delicate grace of a butterfly perched on a flower, wildlife photography brings us closer to the intricate wonders of the animal kingdom.
+
+    Through the lens of a camera, we can witness the raw power of predators in the wild, the playful antics of young cubs, and the serene tranquility of untouched landscapes. Each photograph tells a story, evoking emotions and sparking curiosity about the creatures that inhabit our planet.
+
+    However, wildlife photography is not without its challenges. Patience, perseverance, and a deep understanding of animal behavior are essential to capturing that perfect shot. Whether braving the elements in remote locations or spending hours in quiet observation, photographers must be willing to dedicate themselves fully to their craft.
+
+    But the rewards are immeasurable. Through wildlife photography, we gain a deeper appreciation for the delicate balance of nature and the importance of conservation efforts to protect endangered species and their habitats.
+
+    So, grab your camera, venture into the wilderness, and embark on your own journey of discovery through the lens of wildlife photography.",
+  "author": "Eugene Amedior",
+  "date": "25/2/2024"
+}
+
+
+### Get all posts from database
+GET {{BASE_URL}}
+
+
+### Find one post using database id
+GET {{BASE_URL}}/659d9db9cfbc5061b350bed9
+
+
+### Update post ###
+PATCH {{BASE_URL}}/659d9db9cfbc5061b350bed9
+
+{
+  "heading": "Documentation",
+  "field": "Testing",
+  "content": "All routes operational"
+}

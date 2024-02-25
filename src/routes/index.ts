@@ -8,9 +8,9 @@ import { deleteOneBlog } from "../controllers/deleteOne.controller";
 const router = Router();
 
 router.post("/create", createBlog);
-router.get("/getAll", findAllBlogs);
+router.get("/", findAllBlogs);
 router.get("/:id", findOneBlog);
-router.put("/update/:id", updateOneBlog);
-router.delete("/delete/:id", deleteOneBlog);
+router.patch("/:id", updateOneBlog);
+router.delete("/:id", deleteOneBlog);
 
 export default router;
